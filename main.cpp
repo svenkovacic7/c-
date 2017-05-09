@@ -33,7 +33,7 @@ int main() {
 	while (true){
         switch(getch()){
             case 80:
-                if(d < linb  || c < lina){
+                if(d < linb  || c < lina || a > linc ||b > linb-5){
                 cleardevice();
                 b+= 5;
                 d+=5;
@@ -47,11 +47,18 @@ int main() {
                 }
                 break;
             case 72:
+                if( b > linb  || c < lina || a > linc ||d < linb+5){
                 cleardevice();
                 b-=5;
                 d-=5;
                 rectangle(a,b,c,d);
                 line(lina,linb,linc,lind);
+            }
+                else{
+                    cleardevice();
+                    line(lina,linb,linc,lind);
+                    rectangle(a,b,c,d);
+            }
                 break;
             case 77:
                 cleardevice();
